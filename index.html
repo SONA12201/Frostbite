@@ -285,7 +285,7 @@ footer a:hover { color: var(--cyan); }
   </div>
 </section>
 
-<!-- 3. SERVICES AND SAMPLE PRICES -->
+<!-- 3. SERVICES AND PRICES -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-intro">
@@ -303,8 +303,8 @@ footer a:hover { color: var(--cyan); }
         <div class="service-icon">🚚</div>
         <h3>Local Cold Delivery</h3>
         <p>Concept for short-distance movement of suitable temperature-sensitive shipments.</p>
-        <div class="price">₹500 / shipment</div>
-        <div class="price-note">Illustrative sample price</div>
+        <div class="price">₹450 / shipment</div>
+        <div class="price-note"> price</div>
         <a class="btn" href="#contact">Enquire Now</a>
       </article>
 
@@ -312,8 +312,8 @@ footer a:hover { color: var(--cyan); }
         <div class="service-icon">⚡</div>
         <h3>Express Cold Delivery</h3>
         <p>Priority coordination for time-sensitive products requiring defined handling conditions.</p>
-        <div class="price">₹1,200 / shipment</div>
-        <div class="price-note">Illustrative sample price</div>
+        <div class="price">₹1,150 / shipment</div>
+        <div class="price-note"> price</div>
         <a class="btn" href="#contact">Enquire Now</a>
       </article>
 
@@ -321,8 +321,8 @@ footer a:hover { color: var(--cyan); }
         <div class="service-icon">🏢</div>
         <h3>Cold Storage</h3>
         <p>Storage coordination for eligible products that require a specified temperature range.</p>
-        <div class="price">₹800 / day</div>
-        <div class="price-note">Illustrative sample price</div>
+        <div class="price">₹790 / day</div>
+        <div class="price-note"> price</div>
         <a class="btn" href="#contact">Enquire Now</a>
       </article>
 
@@ -363,7 +363,7 @@ footer a:hover { color: var(--cyan); }
       <div class="section-label">Business Intelligence</div>
       <h2>Frostbite Logistics Dashboard</h2>
       <p>
-        A sample operational dashboard demonstrating how a cold-chain
+       a cold-chain
         logistics business could review delivery performance and shipment status.
       </p>
     </div>
@@ -377,7 +377,7 @@ footer a:hover { color: var(--cyan); }
       <div class="kpi">
         <small>Total Shipments</small>
         <strong>1,250</strong>
-        <div class="kpi-foot">Sample reporting period</div>
+        <div class="kpi-foot"> reporting period</div>
       </div>
       <div class="kpi">
         <small>Delivered</small>
@@ -387,7 +387,7 @@ footer a:hover { color: var(--cyan); }
       <div class="kpi">
         <small>In Transit</small>
         <strong>120</strong>
-        <div class="kpi-foot">Currently moving in the sample</div>
+        <div class="kpi-foot">Currently moving in the cargo</div>
       </div>
       <div class="kpi">
         <small>Delayed</small>
@@ -408,7 +408,7 @@ footer a:hover { color: var(--cyan); }
 
     <div class="dashboard-bottom">
       <div class="panel">
-        <h3>Sample Weekly Shipment Volume</h3>
+        <h3> Weekly Shipment Volume</h3>
         <div class="chart">
           <svg viewBox="0 0 520 235" role="img" aria-label="Bar chart of fictional shipment volumes over six weeks">
             <line class="chart-grid" x1="45" y1="30" x2="500" y2="30"/>
@@ -452,7 +452,7 @@ footer a:hover { color: var(--cyan); }
           <div class="status-track"><div class="status-fill" style="width:4%"></div></div>
         </div>
         <p class="dashboard-footnote">
-          Status percentages are calculated from the sample totals:
+          Status percentages are calculated from the totals:
           1,080 delivered, 120 in transit, and 50 delayed.
         </p>
       </div>
@@ -472,16 +472,16 @@ footer a:hover { color: var(--cyan); }
       <div class="section-label">Interactive Business Feature</div>
       <h2>Track Your Shipment</h2>
       <p>
-        Enter a sample shipment ID to see how a cold-chain tracking
+        Enter a shipment ID to see how a cold-chain tracking
         page can display shipment status, route and temperature
         requirements.
       </p>
       <p>
-        This demonstration uses two predefined sample records.
+        This demonstration uses two predefined records.
         It is not connected to real vehicles, sensors, customers,
         or a live tracking system.
       </p>
-      <p><strong>Try these sample IDs:</strong><br>
+      <p><strong>Try these IDs:</strong><br>
         FROST1001 or FROST1002
       </p>
     </div>
@@ -497,7 +497,7 @@ footer a:hover { color: var(--cyan); }
 
       <div id="trackResult" class="track-result" aria-live="polite"></div>
       <p class="track-warning">
-        Sample shipment data only. Do not use this demonstration for
+        Shipment data only. Do not use this demonstration for
         healthcare shipment decisions or actual delivery verification.
       </p>
     </div>
@@ -625,7 +625,7 @@ footer a:hover { color: var(--cyan); }
     </div>
     <div class="copyright">
       © <span id="year"></span> Frostbite. Student website concept.
-      Sample prices and operational data are illustrative.
+      Prices and operational data are illustrative.
       No live tracking or online booking is connected.
     </div>
   </div>
@@ -655,22 +655,22 @@ navLinks.querySelectorAll("a").forEach(function(link) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Interactive shipment search — demonstration records only
-const sampleShipments = {
+const Shipments = {
   "FROST1001": {
     status: "In Transit",
     origin: "Ahmedabad",
     destination: "Mumbai",
     product: "Temperature-sensitive healthcare cargo",
     temperature: "2°C to 8°C",
-    update: "Sample update: Shipment departed origin facility"
+    update: "Update: Shipment departed origin facility"
   },
   "FROST1002": {
     status: "Delivered",
     origin: "Vadodara",
     destination: "Surat",
-    product: "Refrigerated sample cargo",
+    product: "Refrigerated cargo",
     temperature: "2°C to 8°C",
-    update: "Sample update: Delivery recorded"
+    update: "Update: Delivery recorded"
   }
 };
 
@@ -679,7 +679,7 @@ document.getElementById("trackingForm").addEventListener("submit", function(even
 
   const id = document.getElementById("trackingId").value.trim().toUpperCase();
   const result = document.getElementById("trackResult");
-  const shipment = sampleShipments[id];
+  const shipment = Shipments[id];
 
   result.style.display = "block";
 
