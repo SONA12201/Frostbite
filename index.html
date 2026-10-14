@@ -4,708 +4,581 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b2b">
-
+<meta name="description" content="Frostbite cold-chain logistics for temperature-sensitive healthcare and perishable products.">
 <title>Frostbite | Cold Chain Logistics</title>
-<meta name="description" content="Frostbite cold-chain logistics concept for temperature-controlled transportation, pharmaceutical storage and shipment visibility.">
 
 <style>
-:root {
-  --navy: #071b2b;
-  --navy2: #102e43;
-  --blue: #078bd2;
-  --cyan: #6be4ef;
-  --ice: #edf8fc;
-  --text: #20394b;
-  --muted: #687d8c;
-  --line: #dce8ee;
-  --white: #fff;
+:root{
+  --navy:#071b2b;
+  --blue:#087fbd;
+  --cyan:#6ee7f2;
+  --ice:#edf8fc;
+  --text:#193448;
+  --muted:#657b8b;
+  --border:#dce8ef;
+  --white:#fff;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body { font-family: Arial, sans-serif; color: var(--text); line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-button, input, select, textarea { font: inherit; }
-.container { width: min(1160px, 92%); margin: auto; }
-section { padding: 78px 0; }
-h1, h2, h3 { line-height: 1.2; }
-h2 { font-size: clamp(29px, 4vw, 42px); color: var(--navy); margin-bottom: 16px; }
-p { color: var(--muted); }
-.section-label { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-.section-intro { max-width: 720px; margin-bottom: 35px; }
-.btn { display: inline-block; border: 1px solid var(--blue); background: var(--blue); color: white; border-radius: 4px; padding: 12px 21px; cursor: pointer; font-weight: 700; font-size: 13px; }
-.btn:hover { background: #066ba6; }
-.btn-outline { background: transparent; border-color: #a9c5d6; }
-.btn-outline:hover { background: white; color: var(--navy); }
-.announcement { background: var(--navy); color: #d9edf6; text-align: center; font-size: 11px; padding: 7px; letter-spacing: 1.5px; }
-header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--line); }
-.navbar { display: flex; justify-content: space-between; align-items: center; min-height: 76px; gap: 20px; }
-.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.brand img { width: 49px; height: 49px; object-fit: contain; }
-.brand-name { font-size: 23px; font-weight: 900; letter-spacing: 1px; color: var(--navy); }
-.brand-name span { color: var(--blue); }
-.nav-links { display: flex; align-items: center; gap: 23px; list-style: none; font-size: 13px; font-weight: 700; }
-.nav-links a:hover { color: var(--blue); }
-.menu-toggle { display: none; background: none; border: none; font-size: 27px; cursor: pointer; color: var(--navy); }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.65}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+section{padding:76px 0}
+h1,h2,h3{line-height:1.2}
+h2{font-size:clamp(28px,4vw,42px);margin:10px 0 18px;color:var(--navy)}
+p{color:var(--muted)}
+.section-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--blue);font-weight:800}
+.section-intro{max-width:700px;margin-bottom:35px}
+.btn{display:inline-block;background:var(--blue);color:white;border:1px solid var(--blue);padding:12px 22px;border-radius:5px;font-weight:bold;font-size:14px;cursor:pointer}
+.btn:hover{background:#05689c}
+.btn-outline{background:transparent;color:white;border-color:#9fc3d5}
+.btn-outline:hover{background:white;color:var(--navy)}
+header{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;align-items:center;min-height:78px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:23px;letter-spacing:1px;color:var(--navy)}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span{color:var(--blue)}
+.nav-links{display:flex;list-style:none;align-items:center;gap:22px;font-size:13px;font-weight:bold}
+.nav-links a:hover{color:var(--blue)}
+.menu{display:none;background:none;border:0;font-size:27px;cursor:pointer;color:var(--navy)}
+.announcement{background:var(--navy);color:#d8f4fb;text-align:center;font-size:11px;letter-spacing:1.5px;padding:7px}
 
-/* Home */
-.hero {
-  color: white;
-  background: linear-gradient(90deg, rgba(4,20,34,.97), rgba(4,20,34,.78), rgba(4,20,34,.36)),
-  url("https://images.unsplash.com/photo-1581093458791-9d42e3c7f8a2?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
-  background-color: var(--navy);
+.hero{
+  color:white;
+  background:linear-gradient(90deg,rgba(3,20,34,.96),rgba(3,20,34,.7)),
+  url("https://images.unsplash.com/photo-1581093458791-9d42e3c7f8a2?auto=format&fit=crop&w=1800&q=80") center/cover,
+  var(--navy);
 }
-.hero-content { max-width: 740px; padding: 100px 0 90px; }
-.hero .section-label { color: var(--cyan); }
-.hero h1 { font-size: clamp(40px, 6vw, 68px); margin-bottom: 22px; letter-spacing: -1.5px; }
-.hero h1 span { color: var(--cyan); }
-.hero p { color: #d7e6ee; max-width: 620px; font-size: 17px; margin-bottom: 28px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-points { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 32px; font-size: 12px; color: #e0edf4; }
-.hero-points span:before { content: "✓ "; color: var(--cyan); font-weight: bold; }
+.hero-inner{min-height:520px;display:flex;align-items:center;padding-top:65px;padding-bottom:65px}
+.hero-content{max-width:700px}
+.hero h1{font-size:clamp(38px,6vw,64px);margin:18px 0;letter-spacing:-1px}
+.hero h1 span{color:var(--cyan)}
+.hero p{color:#d4e3ed;font-size:17px;max-width:620px;margin-bottom:27px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-points{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:#d7e7ef}
+.hero-points span:before{content:"✓ ";color:var(--cyan);font-weight:bold}
 
-/* Quick highlights */
-.highlights { background: var(--ice); border-bottom: 1px solid var(--line); }
-.highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 25px 0; }
-.highlight { display: flex; align-items: center; gap: 14px; }
-.highlight-icon { background: white; border-radius: 50%; padding: 13px; font-size: 23px; }
-.highlight strong { display: block; font-size: 14px; }
-.highlight small { color: var(--muted); }
+.value-strip{background:var(--ice);padding:24px 0}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.value-item{display:flex;gap:13px;align-items:center}
+.value-icon{font-size:25px}
+.value-item strong{display:block;font-size:14px}
+.value-item small{color:var(--muted)}
 
-/* About */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
-.about-visual { min-height: 320px; padding: 35px; border-radius: 10px; color: white; background: linear-gradient(140deg, #0a4568, var(--navy)); display: flex; flex-direction: column; justify-content: center; }
-.about-visual .big-icon { font-size: 55px; margin-bottom: 20px; }
-.about-visual h3 { font-size: 27px; margin-bottom: 12px; }
-.about-visual p { color: #d0e4ef; }
-.check-list { list-style: none; margin: 22px 0; }
-.check-list li { padding: 9px 0; border-bottom: 1px solid var(--line); }
-.check-list li:before { content: "✓"; color: var(--blue); font-weight: bold; margin-right: 10px; }
-.info-note { font-size: 12px; margin-top: 12px; }
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--border);border-radius:8px;padding:25px;background:white}
+.card:hover{border-color:#8bd6e7;box-shadow:0 8px 24px #0c31420d}
+.card-icon{font-size:29px;margin-bottom:13px}
+.card h3{font-size:18px;margin-bottom:10px}
+.card p{font-size:14px}
+.price{font-size:22px;font-weight:800;color:var(--blue);margin:13px 0 5px}
+.price small{font-size:11px;color:var(--muted);font-weight:normal}
+.note{font-size:12px;color:var(--muted);margin-top:18px}
 
-/* Services */
-.services { background: #f6fafc; }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.service-card { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 25px; transition: .2s; }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px #071b2b12; }
-.service-icon { font-size: 30px; margin-bottom: 16px; }
-.service-card h3 { color: var(--navy); font-size: 19px; margin-bottom: 10px; }
-.service-card p { font-size: 14px; min-height: 68px; margin-bottom: 17px; }
-.price { color: var(--blue); font-weight: 800; font-size: 19px; }
-.price-note { font-size: 11px; margin-top: 5px; }
-.service-card .btn { margin-top: 16px; }
+.about{background:var(--navy);color:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about h2{color:white}
+.about p{color:#c4d7e3;margin-bottom:17px}
+.about .section-label{color:var(--cyan)}
+.about-list{list-style:none;margin:20px 0}
+.about-list li{padding:9px 0;border-bottom:1px solid #ffffff20;color:#e2edf3;font-size:14px}
+.about-list li:before{content:"✓";color:var(--cyan);margin-right:12px}
+.about-panel{padding:28px;border:1px solid #36566b;background:#102d42;border-radius:10px}
+.about-panel h3{margin-bottom:16px}
+.fact{padding:14px 0;border-bottom:1px solid #ffffff20}
+.fact strong{display:block;color:var(--cyan);font-size:17px}
+.fact span{font-size:13px;color:#c4d7e3}
+.about-panel .note{color:#b6cbd8}
 
-/* Dashboard */
-.dashboard { background: var(--navy); color: white; }
-.dashboard h2 { color: white; }
-.dashboard .section-label { color: var(--cyan); }
-.dashboard .section-intro p { color: #c3d7e3; }
-.demo-banner { background: #173c52; color: #d8edf7; padding: 12px 15px; border-radius: 5px; font-size: 12px; margin-bottom: 23px; }
-.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.kpi { background: #102e43; border: 1px solid #29495e; border-radius: 8px; padding: 22px; }
-.kpi small { color: #b8cdda; font-size: 12px; }
-.kpi strong { display: block; font-size: 30px; color: var(--cyan); margin: 7px 0; }
-.kpi .kpi-foot { color: #b8cdda; font-size: 11px; }
-.dashboard-bottom { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; margin-top: 22px; }
-.panel { background: #102e43; border: 1px solid #29495e; border-radius: 8px; padding: 24px; min-width: 0; }
-.panel h3 { font-size: 17px; margin-bottom: 18px; }
-.chart { height: 220px; width: 100%; }
-.chart svg { width: 100%; height: 100%; overflow: visible; }
-.chart-label { fill: #bfd2df; font-size: 11px; }
-.chart-grid { stroke: #365369; stroke-dasharray: 4 5; }
-.chart-bar { fill: #63dce9; }
-.chart-bar.alt { fill: #168fd0; }
-.status-row { margin: 19px 0; }
-.status-title { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; margin-bottom: 7px; }
-.status-track { height: 8px; background: #29495e; border-radius: 8px; overflow: hidden; }
-.status-fill { height: 100%; background: var(--cyan); border-radius: 8px; }
-.dashboard-footnote { font-size: 11px; color: #a9c1d0; margin-top: 18px; }
+.dashboard-section{background:#f3f8fb}
+.dashboard-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.demo-badge{font-size:11px;background:#fff0d7;color:#8c5b09;padding:6px 10px;border-radius:20px;font-weight:bold}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin:28px 0}
+.kpi{padding:22px;background:white;border:1px solid var(--border);border-radius:8px}
+.kpi span{font-size:12px;color:var(--muted)}
+.kpi strong{display:block;font-size:30px;color:var(--navy);margin:6px 0}
+.kpi small{font-size:11px;color:var(--muted)}
+.dashboard-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.panel{padding:25px;background:white;border:1px solid var(--border);border-radius:8px;min-width:0}
+.panel h3{font-size:17px;margin-bottom:18px}
+.chart{display:flex;align-items:flex-end;justify-content:space-around;gap:15px;height:200px;border-bottom:1px solid var(--border);padding:10px 5px 0}
+.bar-group{height:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px}
+.bar{width:min(48px,75%);height:var(--h);min-height:4px;background:linear-gradient(0deg,var(--blue),#65d9e8);border-radius:5px 5px 0 0}
+.bar-group span{font-size:11px;color:var(--muted)}
+.chart-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:16px}
+.chart-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--blue);margin-right:5px}
+.progress-item{margin:19px 0}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px;gap:10px}
+.track{height:8px;border-radius:10px;background:#e5edf2;overflow:hidden}
+.fill{height:100%;background:var(--blue);border-radius:10px}
+.tracking-box{background:var(--navy);color:white;border-radius:9px;padding:28px;margin-top:22px}
+.tracking-box h3{font-size:23px;margin-bottom:8px}
+.tracking-box p{color:#c4d7e3;font-size:13px;margin-bottom:16px}
+.track-form{display:flex;gap:10px;flex-wrap:wrap}
+.track-form input{flex:1;min-width:190px;padding:12px;border:1px solid #6e8798;border-radius:5px;background:white;color:var(--navy)}
+.track-result{margin-top:20px;padding:17px;background:#ffffff10;border:1px solid #ffffff30;border-radius:6px;display:none}
+.track-result h4{color:var(--cyan);margin-bottom:8px}
+.track-result p{margin:5px 0}
+.status{display:inline-block;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:bold;background:#d8f8e7;color:#11673d}
+.status.warn{background:#fff0d7;color:#8c5b09}
+.status.done{background:#dceeff;color:#075b92}
 
-/* Tracking feature */
-.tracking { background: var(--ice); }
-.track-box { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; align-items: start; }
-.track-intro p { margin-bottom: 20px; }
-.track-card { background: white; padding: 28px; border: 1px solid var(--line); border-radius: 9px; box-shadow: 0 8px 25px #071b2b08; }
-.field { margin-bottom: 16px; }
-.field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
-.field input, .field select, .field textarea { width: 100%; padding: 12px; border: 1px solid #cbdce5; border-radius: 4px; background: white; color: var(--text); }
-.track-result { display: none; margin-top: 20px; padding: 18px; border-radius: 6px; background: #edf8fc; border: 1px solid #ccebf4; }
-.track-result h3 { margin-bottom: 10px; color: var(--navy); }
-.track-result p { margin: 5px 0; font-size: 13px; }
-.track-status { display: inline-block; padding: 4px 9px; border-radius: 20px; background: #d9f4e8; color: #146543; font-size: 11px; font-weight: bold; }
-.track-warning { font-size: 11px; margin-top: 14px; }
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{border-top:3px solid #8cdeed;padding-top:20px}
+.step-num{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:white;font-weight:bold;margin-bottom:15px}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{font-size:13px}
 
-/* Contact */
-.contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; }
-.contact-detail { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
-.contact-detail strong { display: block; color: var(--navy); }
-.contact-form { background: #f7fafc; border: 1px solid var(--line); border-radius: 8px; padding: 28px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.form-note { font-size: 11px; margin-top: 12px; }
+.cta{background:linear-gradient(100deg,#0b3048,#0a6591);color:white;padding:42px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{color:white;font-size:30px}
+.cta p{color:#d2e6ef}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+.contact-detail{padding:15px 0;border-bottom:1px solid var(--border);font-size:14px}
+.contact-detail strong{display:block;color:var(--navy)}
+.contact-form{padding:26px;background:#f7fafc;border:1px solid var(--border);border-radius:8px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.form-group{margin-bottom:15px}
+.form-group label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px;border:1px solid #cadbe4;border-radius:4px;background:white}
+.form-group textarea{min-height:105px;resize:vertical}
+.form-note{font-size:11px;margin-top:12px}
 
-/* Footer */
-footer { background: #04131f; color: white; padding: 45px 0 20px; }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 35px; padding-bottom: 30px; }
-footer h3, footer h4 { margin-bottom: 12px; }
-footer p, footer a { color: #b5c9d5; font-size: 13px; }
-.footer-links { display: grid; gap: 8px; }
-footer a:hover { color: var(--cyan); }
-.copyright { border-top: 1px solid #243a4a; padding-top: 17px; text-align: center; color: #9ab1bf; font-size: 11px; }
+footer{background:#04131f;color:#d8e5ed;padding:45px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px;padding-bottom:30px}
+footer h3,footer h4{color:white;margin-bottom:13px}
+footer p,footer a{color:#b6c9d5;font-size:13px}
+.footer-links{display:grid;gap:9px}
+footer a:hover{color:var(--cyan)}
+.copyright{border-top:1px solid #294050;padding-top:18px;text-align:center;font-size:11px;color:#9db3c1}
 
-@media (max-width: 850px) {
-  .nav-links { gap: 12px; font-size: 12px; }
-  .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-grid, .track-box, .contact-grid { grid-template-columns: 1fr; }
-  .dashboard-bottom { grid-template-columns: 1fr; }
+@media(max-width:900px){
+ .nav-links{gap:12px;font-size:12px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .profile-grid{grid-template-columns:repeat(2,1fr)}
+ .about-grid{gap:25px}
+ .dashboard-grid{grid-template-columns:1fr}
 }
-@media (max-width: 650px) {
-  .menu-toggle { display: block; }
-  .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 22px 5%; background: white; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 17px; }
-  .nav-links.open { display: flex; }
-  .hero-content { padding: 75px 0; }
-  .highlight-grid, .kpi-grid { grid-template-columns: 1fr 1fr; }
-  .service-grid { grid-template-columns: 1fr; }
-  .service-card p { min-height: 0; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid > div:first-child { grid-column: 1 / -1; }
-  section { padding: 60px 0; }
+@media(max-width:700px){
+ .nav{min-height:70px}
+ .brand img{width:43px;height:43px}
+ .brand{font-size:20px}
+ .menu{display:block}
+ .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:white;padding:20px 5%;border-bottom:1px solid var(--border);align-items:flex-start;flex-direction:column}
+ .nav-links.open{display:flex}
+ .hero-inner{min-height:480px}
+ .value-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .value-grid{gap:18px}
+ .cards{grid-template-columns:1fr}
+ .kpis{grid-template-columns:repeat(2,1fr)}
+ .process-grid{grid-template-columns:repeat(2,1fr)}
+ .cta{flex-direction:column;align-items:flex-start;padding:28px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:1/-1}
 }
-@media (max-width: 400px) {
-  .brand-name { font-size: 19px; }
-  .highlight-grid, .kpi-grid, .footer-grid { grid-template-columns: 1fr; }
-  .footer-grid > div:first-child { grid-column: auto; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+@media(max-width:430px){
+ .kpis,.process-grid,.form-row,.footer-grid{grid-template-columns:1fr}
+ .footer-grid>div:first-child{grid-column:auto}
+ .hero-actions{flex-direction:column;align-items:stretch}
+ .hero-actions .btn{text-align:center}
+ .kpi strong{font-size:25px}
 }
 </style>
 </head>
 
 <body>
-<div class="announcement">
-  FROSTBITE · TEMPERATURE-CONTROLLED LOGISTICS
-</div>
+<div class="announcement">FROSTBITE · COLD CHAIN LOGISTICS · EVERY DEGREE MATTERS</div>
 
 <header>
-  <div class="container navbar">
-    <a class="brand" href="#home" aria-label="Frostbite home">
-      <img src="logo.jpeg" alt="Frostbite logo">
-      <div class="brand-name">FROST<span>BITE</span></div>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-
-    <nav aria-label="Main navigation">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#tracking">Track Shipment</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn" href="#contact">Get Started</a>
-  </div>
+ <div class="container nav">
+  <a class="brand" href="#home">
+   <img src="logo.jpeg" alt="Frostbite logo">
+   <div>FROST<span>BITE</span></div>
+  </a>
+  <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav>
+   <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#tracking">Track Shipment</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+ </div>
 </header>
 
 <main>
 
 <!-- 1. HOME -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-      <div class="section-label">Cold Chain. Connected.</div>
-      <h1>Every Degree Matters.<br><span>Every Delivery Counts.</span></h1>
-      <p>
-        Frostbite is a cold-chain logistics website concept for
-        temperature-sensitive products. Explore solutions for
-        pharmaceutical transport, refrigerated storage, shipment
-        monitoring, and cold-chain coordination.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="#services">Explore Our Services →</a>
-        <a class="btn btn-outline" href="#tracking">Track a Shipment</a>
-      </div>
-      <div class="hero-points">
-        <span>Temperature-focused handling</span>
-        <span>Shipment visibility</span>
-        <span>Logistics coordination</span>
-      </div>
-    </div>
+ <div class="container hero-inner">
+  <div class="hero-content">
+   <div class="section-label" style="color:var(--cyan)">Precision temperature-controlled logistics</div>
+   <h1>Every Degree Matters.<br><span>Every Delivery Counts.</span></h1>
+   <p>
+    Frostbite is a cold-chain logistics business concept designed
+    to support the safe movement and storage of pharmaceuticals,
+    healthcare products, and other temperature-sensitive cargo.
+   </p>
+   <div class="hero-actions">
+    <a href="#services" class="btn">Get Started →</a>
+    <a href="#tracking" class="btn btn-outline">Track a Shipment</a>
+   </div>
+   <div class="hero-points">
+    <span>Temperature-focused handling</span>
+    <span>Shipment visibility</span>
+    <span>Cold-chain planning</span>
+   </div>
   </div>
+ </div>
 </section>
 
-<div class="highlights">
-  <div class="container highlight-grid">
-    <div class="highlight">
-      <div class="highlight-icon">❄️</div>
-      <div><strong>Temperature Management</strong><small>Product-specific conditions</small></div>
-    </div>
-    <div class="highlight">
-      <div class="highlight-icon">📡</div>
-      <div><strong>Shipment Visibility</strong><small>Tracking and status information</small></div>
-    </div>
-    <div class="highlight">
-      <div class="highlight-icon">📦</div>
-      <div><strong>Cold Chain Solutions</strong><small>Storage, packaging and transport</small></div>
-    </div>
-  </div>
+<div class="value-strip">
+ <div class="container value-grid">
+  <div class="value-item"><div class="value-icon">❄️</div><div><strong>Temperature Control</strong><small>Product-specific requirements</small></div></div>
+  <div class="value-item"><div class="value-icon">📡</div><div><strong>Shipment Visibility</strong><small>Status and exception awareness</small></div></div>
+  <div class="value-item"><div class="value-icon">🚚</div><div><strong>Connected Logistics</strong><small>Storage and transport coordination</small></div></div>
+ </div>
 </div>
 
-<!-- 2. ABOUT BUSINESS -->
+<!-- 2. ABOUT -->
 <section id="about">
-  <div class="container about-grid">
-    <div>
-      <div class="section-label">About Frostbite</div>
-      <h2>Keeping Temperature-Sensitive Cargo in Focus</h2>
-      <p>
-        Frostbite is a proposed cold-chain logistics business concept
-        designed to support the movement and storage of products
-        that require controlled temperatures. The aim is to connect
-        careful handling, shipment visibility, and planned delivery.
-      </p>
-      <ul class="check-list">
-        <li><strong>What we do:</strong> Cold-chain transport, storage coordination, packaging and monitoring concepts.</li>
-        <li><strong>Target customers:</strong> Pharmaceutical companies, hospitals, laboratories, food businesses and life-science companies.</li>
-        <li><strong>Service area:</strong> India-focused concept; actual operating locations to be confirmed.</li>
-        <li><strong>Value proposition:</strong> Product-focused handling, clear shipment information and coordinated logistics.</li>
-      </ul>
-      <a class="btn" href="#contact">Discuss Your Requirements →</a>
-    </div>
-    <div class="about-visual">
-      <div class="big-icon">🧊</div>
-      <h3>Protecting Product Integrity</h3>
-      <p>
-        A cold chain is more than a refrigerated vehicle.
-        It requires the right temperature profile, suitable
-        packaging, careful handling, records, and an action plan
-        for unexpected conditions.
-      </p>
-    </div>
+ <div class="container about-grid">
+  <div>
+   <div class="section-label">About Frostbite</div>
+   <h2>Protecting Products Through a Smarter Cold Chain</h2>
+   <p>
+    Frostbite focuses on the logistics requirements of products
+    that must remain within defined temperature limits throughout
+    storage, handling, and transportation.
+   </p>
+   <p>
+    Our proposed model brings together cold storage, refrigerated
+    transport, packaging, shipment visibility, and delivery
+    coordination to support reliable supply chains.
+   </p>
+   <ul class="about-list">
+    <li>Target customers: pharmaceutical companies and distributors</li>
+    <li>Hospitals, diagnostic laboratories, and life-sciences businesses</li>
+    <li>Food businesses and other temperature-sensitive cargo owners</li>
+    <li>Proposed service area: Vadodara, Gujarat, with expansion across India</li>
+    <li>Value proposition: product-focused handling and shipment visibility</li>
+   </ul>
+   <a href="#contact" class="btn">Discuss Your Requirements →</a>
   </div>
+  <div class="about-panel">
+   <h3>Our Business Focus</h3>
+   <div class="fact"><strong>Temperature Integrity</strong><span>Plan handling around approved product temperature limits.</span></div>
+   <div class="fact"><strong>Operational Visibility</strong><span>Make shipment status and exceptions easier to communicate.</span></div>
+   <div class="fact"><strong>Customer-Centred Planning</strong><span>Consider cargo type, route, packaging, and delivery timeline.</span></div>
+   <div class="fact"><strong>Service Area</strong><span>Proposed launch focus: Vadodara and Gujarat.</span></div>
+   <p class="note">These are proposed business objectives, not claims of an existing operating network or certified facilities.</p>
+  </div>
+ </div>
 </section>
 
-<!-- 3. SERVICES AND PRICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-intro">
-      <div class="section-label">Our Services</div>
-      <h2>Cold Chain Solutions for Different Needs</h2>
-      <p>
-        The prices below are illustrative academic-project estimates,
-        not verified Frostbite quotations. Real cold-chain rates depend
-        on route, cargo, packaging, volume, temperature, and handling needs.
-      </p>
-    </div>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <div class="service-icon">🚚</div>
-        <h3>Local Cold Delivery</h3>
-        <p>Concept for short-distance movement of suitable temperature-sensitive shipments.</p>
-        <div class="price">₹450 / shipment</div>
-        <div class="price-note"> price</div>
-        <a class="btn" href="#contact">Enquire Now</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Express Cold Delivery</h3>
-        <p>Priority coordination for time-sensitive products requiring defined handling conditions.</p>
-        <div class="price">₹1,150 / shipment</div>
-        <div class="price-note"> price</div>
-        <a class="btn" href="#contact">Enquire Now</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>Cold Storage</h3>
-        <p>Storage coordination for eligible products that require a specified temperature range.</p>
-        <div class="price">₹790 / day</div>
-        <div class="price-note"> price</div>
-        <a class="btn" href="#contact">Enquire Now</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">💊</div>
-        <h3>Pharma Logistics</h3>
-        <p>Planned transport and handling for medicines and selected healthcare products.</p>
-        <div class="price">Request a quote</div>
-        <div class="price-note">Depends on product and route</div>
-        <a class="btn" href="#contact">Request Quote</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📡</div>
-        <h3>Monitoring Support</h3>
-        <p>Shipment status and temperature-recording coordination where suitable equipment is available.</p>
-        <div class="price">Request a quote</div>
-        <div class="price-note">Depends on monitoring needs</div>
-        <a class="btn" href="#contact">Enquire Now</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📦</div>
-        <h3>Cold Chain Packaging</h3>
-        <p>Packaging options considered against product sensitivity, route and required transit duration.</p>
-        <div class="price">Request a quote</div>
-        <div class="price-note">Depends on packaging specifications</div>
-        <a class="btn" href="#contact">Enquire Now</a>
-      </article>
-    </div>
+<!-- 3. SERVICES AND PRICING -->
+<section id="services" style="background:#f7fafc">
+ <div class="container">
+  <div class="section-intro">
+   <div class="section-label">Our Services</div>
+   <h2>Cold-Chain Services for Different Needs</h2>
+   <p>Illustrative service options and sample prices for the academic project. Actual charges would depend on distance, cargo, packaging, temperature range, and shipment size.</p>
   </div>
+  <div class="cards">
+   <article class="card">
+    <div class="card-icon">💊</div>
+    <h3>Healthcare Delivery</h3>
+    <p>Planned transportation for eligible pharmaceutical and healthcare products.</p>
+    <div class="price">₹1,500 <small>/ sample local shipment</small></div>
+    <a href="#contact" class="btn">Enquire Now</a>
+   </article>
+   <article class="card">
+    <div class="card-icon">❄️</div>
+    <h3>Refrigerated Transport</h3>
+    <p>Temperature-controlled transport planning for products requiring refrigeration.</p>
+    <div class="price">₹2,500 <small>/ sample shipment</small></div>
+    <a href="#contact" class="btn">Enquire Now</a>
+   </article>
+   <article class="card">
+    <div class="card-icon">🏢</div>
+    <h3>Cold Storage</h3>
+    <p>Proposed storage coordination based on product specifications and space requirements.</p>
+    <div class="price">₹500 <small>/ sample storage unit per day</small></div>
+    <a href="#contact" class="btn">Enquire Now</a>
+   </article>
+   <article class="card">
+    <div class="card-icon">📦</div>
+    <h3>Cold-Chain Packaging</h3>
+    <p>Packaging selection based on product sensitivity and transit duration.</p>
+    <div class="price">₹300 <small>/ sample package</small></div>
+    <a href="#contact" class="btn">Enquire Now</a>
+   </article>
+   <article class="card">
+    <div class="card-icon">📡</div>
+    <h3>Monitoring Support</h3>
+    <p>Proposed temperature record and shipment status reporting services.</p>
+    <div class="price">₹200 <small>/ sample shipment</small></div>
+    <a href="#contact" class="btn">Enquire Now</a>
+   </article>
+   <article class="card">
+    <div class="card-icon">🚚</div>
+    <h3>Bulk Shipment Planning</h3>
+    <p>Consolidation and transport planning for larger commercial shipments.</p>
+    <div class="price">Custom Quote</div>
+    <a href="#contact" class="btn">Request a Quote</a>
+   </article>
+  </div>
+  <p class="note">All prices are fictional examples for demonstration. They are not confirmed Frostbite rates or market quotations.</p>
+ </div>
 </section>
 
 <!-- 4. BUSINESS DASHBOARD -->
-<section class="dashboard" id="dashboard">
-  <div class="container">
-    <div class="section-intro">
-      <div class="section-label">Business Intelligence</div>
-      <h2>Frostbite Logistics Dashboard</h2>
-      <p>
-       a cold-chain
-        logistics business could review delivery performance and shipment status.
-      </p>
-    </div>
-
-    <div class="demo-banner">
-      DEMONSTRATION DATA — These figures are fictional examples for the
-      student project. They are not actual Frostbite business results.
-    </div>
-
-    <div class="kpi-grid">
-      <div class="kpi">
-        <small>Total Shipments</small>
-        <strong>1,250</strong>
-        <div class="kpi-foot"> reporting period</div>
-      </div>
-      <div class="kpi">
-        <small>Delivered</small>
-        <strong>1,080</strong>
-        <div class="kpi-foot">86.4% of total shipments</div>
-      </div>
-      <div class="kpi">
-        <small>In Transit</small>
-        <strong>120</strong>
-        <div class="kpi-foot">Currently moving in the cargo</div>
-      </div>
-      <div class="kpi">
-        <small>Delayed</small>
-        <strong>50</strong>
-        <div class="kpi-foot">Requires follow-up</div>
-      </div>
-      <div class="kpi">
-        <small>On-Time Delivery</small>
-        <strong>92%</strong>
-        <div class="kpi-foot">Illustrative service KPI</div>
-      </div>
-      <div class="kpi">
-        <small>Customer Satisfaction</small>
-        <strong>4.3/5</strong>
-        <div class="kpi-foot">Illustrative customer rating</div>
-      </div>
-    </div>
-
-    <div class="dashboard-bottom">
-      <div class="panel">
-        <h3> Weekly Shipment Volume</h3>
-        <div class="chart">
-          <svg viewBox="0 0 520 235" role="img" aria-label="Bar chart of fictional shipment volumes over six weeks">
-            <line class="chart-grid" x1="45" y1="30" x2="500" y2="30"/>
-            <line class="chart-grid" x1="45" y1="75" x2="500" y2="75"/>
-            <line class="chart-grid" x1="45" y1="120" x2="500" y2="120"/>
-            <line class="chart-grid" x1="45" y1="165" x2="500" y2="165"/>
-            <line x1="45" y1="195" x2="500" y2="195" stroke="#7892a4"/>
-            <text class="chart-label" x="7" y="34">300</text>
-            <text class="chart-label" x="7" y="79">225</text>
-            <text class="chart-label" x="7" y="124">150</text>
-            <text class="chart-label" x="7" y="169">75</text>
-            <rect class="chart-bar" x="65" y="100" width="42" height="95" rx="3"/>
-            <rect class="chart-bar alt" x="137" y="87" width="42" height="108" rx="3"/>
-            <rect class="chart-bar" x="209" y="70" width="42" height="125" rx="3"/>
-            <rect class="chart-bar alt" x="281" y="80" width="42" height="115" rx="3"/>
-            <rect class="chart-bar" x="353" y="49" width="42" height="146" rx="3"/>
-            <rect class="chart-bar alt" x="425" y="39" width="42" height="156" rx="3"/>
-            <text class="chart-label" x="86" y="215" text-anchor="middle">W1</text>
-            <text class="chart-label" x="158" y="215" text-anchor="middle">W2</text>
-            <text class="chart-label" x="230" y="215" text-anchor="middle">W3</text>
-            <text class="chart-label" x="302" y="215" text-anchor="middle">W4</text>
-            <text class="chart-label" x="374" y="215" text-anchor="middle">W5</text>
-            <text class="chart-label" x="446" y="215" text-anchor="middle">W6</text>
-          </svg>
-        </div>
-        <p class="dashboard-footnote">Illustrative chart. Weekly values are fictional and are not linked to a database.</p>
-      </div>
-
-      <div class="panel">
-        <h3>Shipment Status Distribution</h3>
-        <div class="status-row">
-          <div class="status-title"><span>Delivered</span><strong>86.4%</strong></div>
-          <div class="status-track"><div class="status-fill" style="width:86.4%"></div></div>
-        </div>
-        <div class="status-row">
-          <div class="status-title"><span>In Transit</span><strong>9.6%</strong></div>
-          <div class="status-track"><div class="status-fill" style="width:9.6%"></div></div>
-        </div>
-        <div class="status-row">
-          <div class="status-title"><span>Delayed</span><strong>4.0%</strong></div>
-          <div class="status-track"><div class="status-fill" style="width:4%"></div></div>
-        </div>
-        <p class="dashboard-footnote">
-          Status percentages are calculated from the totals:
-          1,080 delivered, 120 in transit, and 50 delayed.
-        </p>
-      </div>
-    </div>
-
-    <p class="dashboard-footnote">
-      Note: the on-time delivery KPI is a separate illustrative measure.
-      Its calculation would require actual shipment delivery timestamps.
-    </p>
+<section class="dashboard-section" id="dashboard">
+ <div class="container">
+  <div class="dashboard-head">
+   <div class="section-intro" style="margin-bottom:0">
+    <div class="section-label">Business Dashboard</div>
+    <h2>Logistics Performance at a Glance</h2>
+    <p>Example KPIs for monitoring shipment status, delivery performance, and customer experience.</p>
+   </div>
+   <span class="demo-badge">DEMO DATA — NOT LIVE</span>
   </div>
+
+  <div class="kpis">
+   <div class="kpi"><span>Total Shipments</span><strong>1,250</strong><small>Illustrative reporting period</small></div>
+   <div class="kpi"><span>Delivered</span><strong>849</strong><small>68% of total shipments</small></div>
+   <div class="kpi"><span>In Transit</span><strong>351</strong><small>28.1% of total shipments</small></div>
+   <div class="kpi"><span>Delayed</span><strong>50</strong><small>4% of total shipments</small></div>
+   <div class="kpi"><span>On-Time Delivery</span><strong>92.5%</strong><small>Illustrative performance rate</small></div>
+   <div class="kpi"><span>Customer Satisfaction</span><strong>4.5/5</strong><small>Illustrative customer rating</small></div>
+  </div>
+
+  <div class="dashboard-grid">
+   <div class="panel">
+    <h3>Shipment Status Distribution</h3>
+    <div class="chart" role="img" aria-label="Bar chart comparing delivered 849, in transit 351, and delayed 50 shipments">
+     <div class="bar-group"><div class="bar" style="--h:85%"></div><span>Delivered</span></div>
+     <div class="bar-group"><div class="bar" style="--h:35%"></div><span>In Transit</span></div>
+     <div class="bar-group"><div class="bar" style="--h:5%"></div><span>Delayed</span></div>
+    </div>
+    <div class="chart-legend"><span><i></i>Number of shipments (illustrative)</span></div>
+    <p class="note">Delivered + in-transit + delayed shipments = 1,250.</p>
+   </div>
+
+   <div class="panel">
+    <h3>Performance Indicators</h3>
+    <div class="progress-item">
+     <div class="progress-label"><span>On-Time Delivery</span><strong>92.5%</strong></div>
+     <div class="track"><div class="fill" style="width:92.5%"></div></div>
+    </div>
+    <div class="progress-item">
+     <div class="progress-label"><span>Delivery Completion</span><strong>68%</strong></div>
+     <div class="track"><div class="fill" style="width:68%"></div></div>
+    </div>
+    <div class="progress-item">
+     <div class="progress-label"><span>Customer Satisfaction</span><strong>90%</strong></div>
+     <div class="track"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <p class="note">Customer satisfaction shown as 4.5 out of 5, converted to a percentage for the chart.</p>
+   </div>
+  </div>
+
+  <!-- BUSINESS FEATURE: INTERACTIVE SHIPMENT TRACKING -->
+  <div class="tracking-box" id="tracking">
+   <h3>Track Your Shipment</h3>
+   <p>Enter one of the sample tracking IDs below to view its demonstration status.</p>
+   <form class="track-form" id="trackForm">
+    <input id="trackingId" type="text" placeholder="e.g. FROST1001" aria-label="Shipment tracking ID" required>
+    <button class="btn" type="submit">Track Shipment →</button>
+   </form>
+   <div class="track-result" id="trackResult" aria-live="polite"></div>
+   <p class="note">Sample IDs: FROST1001, FROST1002, FROST1003. This demo does not connect to a real carrier or GPS device.</p>
+  </div>
+ </div>
 </section>
 
-<!-- INTERACTIVE FEATURE: SHIPMENT TRACKING -->
-<section class="tracking" id="tracking">
-  <div class="container track-box">
-    <div class="track-intro">
-      <div class="section-label">Interactive Business Feature</div>
-      <h2>Track Your Shipment</h2>
-      <p>
-        Enter a shipment ID to see how a cold-chain tracking
-        page can display shipment status, route and temperature
-        requirements.
-      </p>
-      <p>
-        This demonstration uses two predefined records.
-        It is not connected to real vehicles, sensors, customers,
-        or a live tracking system.
-      </p>
-      <p><strong>Try these IDs:</strong><br>
-        FROST1001 or FROST1002
-      </p>
-    </div>
-
-    <div class="track-card">
-      <form id="trackingForm">
-        <div class="field">
-          <label for="trackingId">Shipment / Tracking ID</label>
-          <input id="trackingId" name="trackingId" placeholder="e.g. FROST1001" required>
-        </div>
-        <button type="submit" class="btn">Search Shipment →</button>
-      </form>
-
-      <div id="trackResult" class="track-result" aria-live="polite"></div>
-      <p class="track-warning">
-        Shipment data only. Do not use this demonstration for
-        healthcare shipment decisions or actual delivery verification.
-      </p>
-    </div>
+<!-- PROCESS -->
+<section id="process">
+ <div class="container">
+  <div class="section-intro">
+   <div class="section-label">Our Process</div>
+   <h2>From Shipment Request to Delivery</h2>
+   <p>A structured workflow helps keep cargo requirements, documentation, and delivery communication aligned.</p>
   </div>
+  <div class="process-grid">
+   <div class="step"><div class="step-num">01</div><h3>Understand</h3><p>Confirm cargo type, temperature requirements, origin, destination, and timeline.</p></div>
+   <div class="step"><div class="step-num">02</div><h3>Plan</h3><p>Determine suitable packaging, storage arrangements, and transportation.</p></div>
+   <div class="step"><div class="step-num">03</div><h3>Monitor</h3><p>Review shipment status and follow agreed procedures for exceptions.</p></div>
+   <div class="step"><div class="step-num">04</div><h3>Deliver</h3><p>Coordinate delivery and provide relevant shipment documentation.</p></div>
+  </div>
+ </div>
 </section>
 
-<!-- 5. CONTACT / ENQUIRY -->
+<!-- CALL TO ACTION -->
+<section style="padding-top:0">
+ <div class="container">
+  <div class="cta">
+   <div><h2>Need a Temperature-Controlled Logistics Plan?</h2><p>Share your cargo requirements with Frostbite to begin an enquiry.</p></div>
+   <a href="#contact" class="btn">Get a Quote →</a>
+  </div>
+ </div>
+</section>
+
+<!-- 5. CONTACT -->
 <section id="contact">
-  <div class="container contact-grid">
-    <div>
-      <div class="section-label">Contact Us</div>
-      <h2>Let's Plan Your Cold Chain</h2>
-      <p>
-        Share your product type, required temperature, origin,
-        destination and shipment volume so the enquiry can be
-        reviewed against your requirements.
-      </p>
+ <div class="container contact-grid">
+  <div>
+   <div class="section-label">Contact & Enquiry</div>
+   <h2>Let's Discuss Your Shipment</h2>
+   <p>Use the contact details below as placeholders until you add your actual business information.</p>
 
-      <div class="contact-detail">
-        <strong>Email</strong>
-        <a href="mailto:your-email@example.com">your-email@example.com</a>
-      </div>
-      <div class="contact-detail">
-        <strong>Phone</strong>
-        <a href="tel:+910000000000">Replace with your business phone</a>
-      </div>
-      <div class="contact-detail">
-        <strong>Location</strong>
-        India — proposed service area; operating address to be confirmed
-      </div>
-      <div class="contact-detail">
-        <strong>Industry reference</strong>
-        <a href="https://www.ups.com/in/en/healthcare/solutions/coldchain" target="_blank" rel="noopener noreferrer">
-          UPS Healthcare Cold Chain Solutions ↗
-        </a>
-      </div>
-      <div class="contact-detail">
-        <strong>Find a location</strong>
-        <a href="https://www.google.com/maps/search/cold+chain+logistics+India/" target="_blank" rel="noopener noreferrer">
-          View cold-chain logistics locations on Google Maps ↗
-        </a>
-      </div>
-    </div>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="field">
-          <label for="customerName">Full Name *</label>
-          <input id="customerName" name="customerName" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="company">Company *</label>
-          <input id="company" name="company" autocomplete="organization" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="field">
-          <label for="customerEmail">Email *</label>
-          <input type="email" id="customerEmail" name="customerEmail" autocomplete="email" required>
-        </div>
-        <div class="field">
-          <label for="service">Required Service *</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service</option>
-            <option>Local Cold Delivery</option>
-            <option>Express Cold Delivery</option>
-            <option>Cold Storage</option>
-            <option>Pharma Logistics</option>
-            <option>Monitoring Support</option>
-            <option>Cold Chain Packaging</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="requirements">Shipment Requirements *</label>
-        <textarea id="requirements" name="requirements" rows="4" placeholder="Product, temperature range, origin, destination and quantity..." required></textarea>
-      </div>
-
-      <button class="btn" type="submit">Prepare Enquiry Email →</button>
-      <p class="form-note">
-        The form opens your email application. It does not send,
-        save or store enquiries on a server.
-      </p>
-    </form>
+   <div class="contact-detail"><strong>Email</strong><a href="mailto:your-email@example.com">your-email@example.com</a></div>
+   <div class="contact-detail"><strong>Phone</strong><a href="tel:+910000000000">+91-00000-00000</a></div>
+   <div class="contact-detail"><strong>Proposed Location</strong>Vadodara, Gujarat, India</div>
+   <div class="contact-detail"><strong>Directions</strong><a style="color:var(--blue)" href="https://www.google.com/maps/search/?api=1&query=Vadodara%2C%20Gujarat%2C%20India" target="_blank" rel="noopener noreferrer">View Vadodara on Google Maps ↗</a></div>
+   <div class="contact-detail"><strong>Industry Reference</strong><a style="color:var(--blue)" href="https://www.ups.com/in/en/healthcare/solutions/coldchain" target="_blank" rel="noopener noreferrer">UPS Healthcare Cold Chain Solutions ↗</a></div>
   </div>
+
+  <form class="contact-form" id="contactForm">
+   <div class="form-row">
+    <div class="form-group"><label for="customerName">Full Name *</label><input id="customerName" name="name" required autocomplete="name"></div>
+    <div class="form-group"><label for="company">Company *</label><input id="company" name="company" required autocomplete="organization"></div>
+   </div>
+   <div class="form-row">
+    <div class="form-group"><label for="customerEmail">Email *</label><input type="email" id="customerEmail" name="email" required autocomplete="email"></div>
+    <div class="form-group"><label for="service">Service Required *</label>
+     <select id="service" name="service" required>
+      <option value="">Choose a service</option>
+      <option>Healthcare Delivery</option>
+      <option>Refrigerated Transport</option>
+      <option>Cold Storage</option>
+      <option>Cold-Chain Packaging</option>
+      <option>Monitoring Support</option>
+      <option>Bulk Shipment Planning</option>
+     </select>
+    </div>
+   </div>
+   <div class="form-group"><label for="requirements">Shipment Requirements *</label><textarea id="requirements" name="requirements" placeholder="Cargo type, temperature range, route, volume, and expected delivery date..." required></textarea></div>
+   <button class="btn" type="submit">Prepare Enquiry Email →</button>
+   <p class="form-note">This opens your email application. It does not save or transmit the form directly from the website.</p>
+  </form>
+ </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="brand" href="#home">
-          <img src="logo.jpeg" alt="Frostbite logo">
-          <div class="brand-name" style="color:white">FROST<span>BITE</span></div>
-        </a>
-        <p style="margin-top:15px">
-          A cold-chain logistics website concept focused on
-          temperature-controlled transportation, storage and visibility.
-        </p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#about">About Frostbite</a>
-          <a href="#services">Services and Prices</a>
-          <a href="#dashboard">Business Dashboard</a>
-          <a href="#tracking">Shipment Tracking</a>
-          <a href="#contact">Contact and Enquiries</a>
-        </div>
-      </div>
-      <div>
-        <h4>Industry Resources</h4>
-        <div class="footer-links">
-          <a href="https://www.ups.com/in/en/healthcare/solutions/coldchain" target="_blank" rel="noopener noreferrer">UPS Healthcare Cold Chain</a>
-          <a href="https://www.ups.com/in/en/ups-healthcare" target="_blank" rel="noopener noreferrer">UPS Healthcare Services</a>
-          <a href="https://www.google.com/maps/search/cold+chain+logistics+India/" target="_blank" rel="noopener noreferrer">Google Maps — Logistics Search</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      © <span id="year"></span> Frostbite. Student website concept.
-      Prices and operational data are illustrative.
-      No live tracking or online booking is connected.
-    </div>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <a class="brand" href="#home" style="color:white;margin-bottom:15px">
+     <img src="logo.jpeg" alt="Frostbite logo"><div>FROST<span>BITE</span></div>
+    </a>
+    <p>Frostbite is a cold-chain logistics website concept for temperature-sensitive products, shipment visibility, and transport planning.</p>
+   </div>
+   <div><h4>Quick Links</h4><div class="footer-links">
+    <a href="#home">Home</a><a href="#about">About Business</a><a href="#services">Services & Prices</a><a href="#dashboard">Performance Dashboard</a><a href="#tracking">Shipment Tracking</a><a href="#contact">Contact & Enquiry</a>
+   </div></div>
+   <div><h4>Industry Resources</h4><div class="footer-links">
+    <a href="https://www.ups.com/in/en/healthcare/solutions/coldchain" target="_blank" rel="noopener noreferrer">UPS Healthcare Cold Chain ↗</a>
+    <a href="https://www.who.int/teams/health-product-policy-and-standards/standards-and-specifications" target="_blank" rel="noopener noreferrer">WHO Health Product Standards ↗</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Vadodara%2C%20Gujarat%2C%20India" target="_blank" rel="noopener noreferrer">Google Maps: Vadodara ↗</a>
+    <a href="mailto:your-email@example.com">Email Frostbite ↗</a>
+   </div></div>
   </div>
+  <div class="copyright">
+   © <span id="year"></span> Frostbite | Academic website demonstration.
+   Sample prices, KPIs, shipment records, contact details, and service coverage must be replaced or verified before commercial use.
+  </div>
+ </div>
 </footer>
 
 <script>
-// Mobile navigation
-const menuToggle = document.getElementById("menuToggle");
+// Responsive navigation
+const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", function() {
-  const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-  menuToggle.textContent = open ? "✕" : "☰";
+menuBtn.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(opened));
+  menuBtn.textContent = opened ? "✕" : "☰";
 });
 
-navLinks.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", function() {
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
   });
 });
 
-// Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Interactive shipment search — demonstration records only
-const Shipments = {
+// Demonstration shipment data; replace with a real tracking API
+// when an operational backend is available.
+const shipments = {
   "FROST1001": {
     status: "In Transit",
-    origin: "Ahmedabad",
-    destination: "Mumbai",
-    product: "Temperature-sensitive healthcare cargo",
+    origin: "Vadodara",
+    destination: "Ahmedabad",
     temperature: "2°C to 8°C",
-    update: "Update: Shipment departed origin facility"
+    update: "Shipment has departed the dispatch facility."
   },
   "FROST1002": {
     status: "Delivered",
     origin: "Vadodara",
     destination: "Surat",
-    product: "Refrigerated cargo",
+    temperature: "15°C to 25°C",
+    update: "Sample shipment marked as delivered."
+  },
+  "FROST1003": {
+    status: "Delayed",
+    origin: "Ahmedabad",
+    destination: "Vadodara",
     temperature: "2°C to 8°C",
-    update: "Update: Delivery recorded"
+    update: "Sample shipment requires a delivery status review."
   }
 };
 
-document.getElementById("trackingForm").addEventListener("submit", function(event) {
+document.getElementById("trackForm").addEventListener("submit", event => {
   event.preventDefault();
 
   const id = document.getElementById("trackingId").value.trim().toUpperCase();
   const result = document.getElementById("trackResult");
-  const shipment = Shipments[id];
+  const shipment = shipments[id];
 
   result.style.display = "block";
 
   if (!shipment) {
     result.innerHTML =
-      "<h3>Shipment Not Found</h3>" +
-      "<p>No matching demonstration record was found.</p>" +
-      "<p>Try FROST1001 or FROST1002.</p>";
+      "<h4>Shipment Not Found</h4>" +
+      "<p>Use a demonstration ID: FROST1001, FROST1002, or FROST1003.</p>";
     return;
   }
 
-  result.innerHTML =
-    "<h3>Shipment Details</h3>" +
-    "<p><strong>Tracking ID:</strong> " + id + "</p>" +
-    "<p><strong>Status:</strong> <span class='track-status'>" +
-    shipment.status + "</span></p>" +
-    "<p><strong>Origin:</strong> " + shipment.origin + "</p>" +
-    "<p><strong>Destination:</strong> " + shipment.destination + "</p>" +
-    "<p><strong>Cargo:</strong> " + shipment.product + "</p>" +
-    "<p><strong>Required temperature:</strong> " + shipment.temperature + "</p>" +
-    "<p><strong>Update:</strong> " + shipment.update + "</p>" +
-    "<p class='track-warning'>Fictional demonstration record. This is not live tracking or a verified temperature reading.</p>";
+  const statusClass =
+    shipment.status === "Delivered" ? "done" :
+    shipment.status === "Delayed" ? "warn" : "";
+
+  // Escape user input before inserting it into HTML.
+  const safeId = id.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  result.innerHTML = `
+    <h4>Shipment: ${safeId}</h4>
+    <p><span class="status ${statusClass}">${shipment.status}</span></p>
+    <p><strong>Origin:</strong> ${shipment.origin}</p>
+    <p><strong>Destination:</strong> ${shipment.destination}</p>
+    <p><strong>Required temperature:</strong> ${shipment.temperature}</p>
+    <p><strong>Latest update:</strong> ${shipment.update}</p>
+    <p class="note">Demonstration record only — not live GPS or sensor data.</p>
+  `;
 });
 
-// Enquiry form — opens the visitor's email application
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+// Contact form prepares an email draft
+document.getElementById("contactForm").addEventListener("submit", event => {
   event.preventDefault();
 
   const name = document.getElementById("customerName").value.trim();
@@ -714,22 +587,20 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   const service = document.getElementById("service").value;
   const requirements = document.getElementById("requirements").value.trim();
 
-  // Replace this placeholder with your real business email.
-  const businessEmail = "your-email@example.com";
-
-  const subject = encodeURIComponent("Frostbite Enquiry - " + service);
+  const subject = encodeURIComponent("Frostbite Service Enquiry - " + service);
   const body = encodeURIComponent(
     "Hello Frostbite Team,\n\n" +
     "Name: " + name + "\n" +
     "Company: " + company + "\n" +
-    "Customer email: " + email + "\n" +
+    "Email: " + email + "\n" +
     "Service: " + service + "\n\n" +
     "Requirements:\n" + requirements + "\n\n" +
     "Regards,\n" + name
   );
 
+  // Replace with your real business email.
   window.location.href =
-    "mailto:" + businessEmail + "?subject=" + subject + "&body=" + body;
+    "mailto:your-email@example.com?subject=" + subject + "&body=" + body;
 });
 </script>
 </body>
